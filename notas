@@ -1,0 +1,16 @@
+
+producto = (archivo[archivo['SKU'].str.contains(number, na=False)])
+# Para sacar el index del producto cuyo CCBB es el que queremos
+nproducto = (producto.index.item())
+print(nproducto)
+# Para sacar el nombre del producto cuyo CCBB es el que queremos.
+vnombre = archivo.iloc[nproducto]['Nombre']
+print(vnombre)
+# Para sacar todas las lineas cuyo nombre sea el del producto en cuestion
+variaciones = (archivo[archivo['Nombre'].str.contains(vnombre, na=False)])
+#print(variaciones)
+# Para quitar la fila del producto madre
+variaciones = variaciones.drop([nproducto])
+# Para quedarnos solo con la parte de los precios
+acambiar = variaciones[['Nombre', 'Precio normal', 'Precio rebajado']]
+print(acambiar)
