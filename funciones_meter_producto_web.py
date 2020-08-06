@@ -25,6 +25,29 @@ def categoria_producto(numero):
         categoria = "Vestidos / Faldas"
     return categoria
 
-def get_marca(numero_marca):
-    marca = "Babidu"
+def get_marca():
+    numero_marca = input(""" Cual seria la Marca?
+        1 - "Babidu"
+        2 - "Sardon"
+        3 - "Tuc-Tuc"
+        4 - "Mauli"
+        5 - "Dolce Petit"
+        6 - "Ma Petit Lola"
+        7 - "Street Monkey" """)
+    numero = int(numero_marca)
+    global marca
+    if numero == 1:
+        marca = "Babidu"
+    elif numero == 2:
+        marca = "Sardon"
+    elif numero == 3:
+        marca = "Tuc-Tuc"
+    elif numero == 4:
+        marca = "Mauli"
+    elif numero == 5:
+        marca = "Dolce Petit"
+    elif numero == 6:
+        marca = "Ma Petit Lola"
+    elif numero == 7:
+        marca = "Street Monkey"
     return marca
